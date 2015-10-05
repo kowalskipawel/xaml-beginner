@@ -30,11 +30,11 @@
                 Content="Got to Orders View"
                 Style="{StaticResource ButtonXL}"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center" Click="ExpeditePage_Click" />
         <Button Grid.Row="2" Grid.Column="1" 
                 Content="Submit Order"
                 Style="{StaticResource ButtonXL}"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center" Click="OrderPage_Click" />
     </Grid>
 </Page>
