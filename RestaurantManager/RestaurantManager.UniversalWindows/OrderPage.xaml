@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
     <Page.TopAppBar>
         <CommandBar HorizontalAlignment="Stretch">
             <AppBarButton Icon="Home" Label="Home"
@@ -27,7 +28,9 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Background="#FF0DF12C" Margin="10">
+        <ListView Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Background="#FF0DF12C" Margin="10" 
+                  DataContext="{StaticResource DataManager}"
+                  ItemsSource="{Binding MenuItems}">
             
         </ListView>
         <Button Grid.Row="4" Grid.Column="0" 
@@ -46,7 +49,9 @@
         </RichEditBox>
         <TextBlock Grid.Row="1" Grid.Column="2" 
                    Text="Order Items:"/>
-        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Background="#FF0DC8F1" Margin="10">
+        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Background="#FF0DC8F1" Margin="10" 
+                  DataContext="{StaticResource DataManager}"
+                  ItemsSource="{Binding CurrentlySelectedMenuItems}">
 
         </ListView>
         <Button Grid.Row="4" Grid.Column="1"  Grid.ColumnSpan="2"

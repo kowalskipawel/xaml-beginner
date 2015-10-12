@@ -6,6 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+   
+        
     <Page.TopAppBar>
         <CommandBar HorizontalAlignment="Stretch">
             <AppBarButton Icon="Home" Label="Home" HorizontalAlignment="Left" VerticalAlignment="Center" Click="MainPage_Click"/>
@@ -21,8 +23,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <GridView Grid.Row="0" Background="#FF0EC51F">
-            
+        <GridView Grid.Row="0" DataContext="{StaticResource DataManager}" ItemsSource="{Binding OrderItems}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}"/>
+                </DataTemplate>
+            </GridView.ItemTemplate>
         </GridView>
         <Button Grid.Row="1" 
                 Content="Clear All Orders" 
